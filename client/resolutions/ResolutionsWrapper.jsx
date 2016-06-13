@@ -7,8 +7,7 @@ import ResolutionSingle from './ResolutionSingle.jsx'
 Resolutions = new Mongo.Collection("resolutions");
 
 
-
-export default class App extends TrackerReact(React.Component){
+export default class ResolutionsWrapper extends TrackerReact(React.Component){
 	resolutions(){
 		return Resolutions.find().fetch();
 	}
@@ -20,7 +19,7 @@ export default class App extends TrackerReact(React.Component){
 		}
 		return(
 			<div>
-				<p>My Resolutions</p>
+				<p><h1>My Resolutions</h1></p>
 				<ResolutionsForm/>
 				<ul>
 					<ResolutionSingle resolution={res[1]} /> 
